@@ -1,4 +1,4 @@
-name: Compilar Ejecutable IPSICOL
+name: Compilar IPSICOL_Asistencia
 
 on:
   push:
@@ -26,7 +26,7 @@ jobs:
         pip install -r requirements.txt
         pip install -r requirements-build.txt
 
-    - name: Compilar con PyInstaller
+    - name: Compilar con PyInstaller usando el archivo .spec
       run: |
         pyinstaller IPSICOL_Asistencia.spec
 
