@@ -23,16 +23,15 @@ jobs:
     - name: Instalar dependencias
       run: |
         python -m pip install --upgrade pip
-        pip install -r IPSICOL_Asistencia/requirements.txt
-        pip install -r IPSICOL_Asistencia/requirements-build.txt
+        pip install -r requirements.txt
+        pip install -r requirements-build.txt
 
     - name: Compilar con PyInstaller usando el archivo .spec
       run: |
-        cd IPSICOL_Asistencia
         pyinstaller IPSICOL_Asistencia.spec
 
     - name: Subir ejecutable como Artefacto
       uses: actions/upload-artifact@v4
       with:
         name: IPSICOL_Asistencia-Windows
-        path: IPSICOL_Asistencia/dist/
+        path: dist/
